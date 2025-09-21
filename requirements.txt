@@ -1,4 +1,9 @@
-langchain 
-langchain-openai 
-openai 
+langchain
+langchain-openai
+langchain-core
+langchain-community
+openai
 streamlit
+PyPDF2
+faiss-cpu
+tiktoken

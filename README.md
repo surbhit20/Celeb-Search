@@ -1,9 +1,10 @@
-# 🎭 LangChain Celebrity Search Application
+# 🎭 LangChain Learning Project
 
-A powerful Streamlit web application that uses LangChain and OpenAI to search for celebrities and provide detailed information about them, including their background, birth date, and historical events that occurred during their birth year.
+A comprehensive LangChain learning repository featuring multiple applications and tutorials that demonstrate various LangChain capabilities including prompt engineering, PDF querying, and celebrity search functionality.
 
-## ✨ Features
+## ✨ Project Components
 
+### 1. 🎭 Celebrity Search Application (`main.py`)
 - **Celebrity Information Search**: Get comprehensive information about any celebrity
 - **Sequential Chain Processing**: Uses LangChain's SequentialChain to process information in multiple steps
 - **Memory Management**: Implements ConversationBufferMemory to maintain context across chains
@@ -11,15 +12,41 @@ A powerful Streamlit web application that uses LangChain and OpenAI to search fo
 - **Interactive UI**: Clean and intuitive Streamlit interface with expandable sections
 - **Real-time Processing**: Instant results with verbose logging for transparency
 
+### 2. 📚 Prompt Engineering Tutorial (`PromptEngineering.ipynb`)
+- **Financial Advisor Prompt**: Learn to create specialized prompts for financial advice
+- **Language Translation**: Implement multi-language translation using LangChain
+- **Template Management**: Master PromptTemplate usage and variable handling
+- **Chain Creation**: Build and execute LLM chains for various use cases
+
+### 3. 📄 PDF Query System (`QueryPDF.ipynb`)
+- **PDF Processing**: Extract and process text from PDF documents
+- **Vector Embeddings**: Use OpenAI embeddings for semantic search
+- **FAISS Integration**: Implement vector similarity search for document retrieval
+- **Text Splitting**: Efficiently split large documents for processing
+
 ## 🏗️ Architecture
 
-The application uses a sophisticated chain-based architecture:
+### Celebrity Search Application
+The Streamlit application uses a sophisticated chain-based architecture:
 
 1. **First Chain**: Generates a detailed description of the celebrity
 2. **Second Chain**: Determines the celebrity's birth date
 3. **Third Chain**: Finds 5 major world events that occurred around their birth year
 
 Each chain maintains its own memory buffer to preserve context and enable more accurate responses.
+
+### Prompt Engineering Tutorial
+Demonstrates fundamental LangChain concepts:
+- **Prompt Templates**: Reusable prompt structures with variable substitution
+- **LLM Chains**: Connecting prompts to language models
+- **Model Configuration**: Temperature and model selection
+
+### PDF Query System
+Implements document processing pipeline:
+- **Document Loading**: PDF text extraction using PyPDF2
+- **Text Splitting**: Character-based text segmentation
+- **Embedding Generation**: OpenAI embeddings for semantic search
+- **Vector Storage**: FAISS for efficient similarity search
 
 ## 🚀 Quick Start
 
@@ -62,6 +89,7 @@ Each chain maintains its own memory buffer to preserve context and enable more a
 
 ## 📋 Usage
 
+### Celebrity Search Application
 1. **Enter a celebrity name** in the text input field
 2. **Click Enter** or wait for the processing to complete
 3. **View the results** which include:
@@ -70,23 +98,61 @@ Each chain maintains its own memory buffer to preserve context and enable more a
    - Major world events from their birth year
 4. **Explore memory buffers** using the expandable sections to see the conversation history
 
+### Prompt Engineering Tutorial
+1. **Open `PromptEngineering.ipynb`** in Jupyter Notebook
+2. **Run the cells sequentially** to understand:
+   - How to create prompt templates
+   - Building LLM chains
+   - Financial advisor prompt example
+   - Language translation implementation
+3. **Experiment with different prompts** and parameters
+
+### PDF Query System
+1. **Open `QueryPDF.ipynb`** in Jupyter Notebook
+2. **Place your PDF file** in the project directory
+3. **Update the PDF filename** in the notebook
+4. **Run the cells** to:
+   - Extract text from PDF
+   - Create embeddings and vector store
+   - Query the document with natural language
+
 ## 🛠️ Technical Details
 
 ### Dependencies
 
+#### Core LangChain
 - **langchain**: Core LangChain framework for building LLM applications
 - **langchain-openai**: OpenAI integration for LangChain
 - **langchain-core**: Core LangChain components (messages, prompts)
+- **langchain-community**: Community integrations and tools
+
+#### OpenAI & AI
 - **openai**: Official OpenAI Python client
+- **tiktoken**: Token counting for OpenAI models
+
+#### Web & UI
 - **streamlit**: Web application framework
+
+#### PDF Processing
+- **PyPDF2**: PDF text extraction and manipulation
+
+#### Vector Search
+- **faiss-cpu**: Facebook AI Similarity Search for vector operations
 
 ### Key Components
 
+#### LangChain Core
 - **ChatOpenAI**: OpenAI GPT model integration
 - **PromptTemplate**: Template-based prompt generation
 - **LLMChain**: Individual processing chains
 - **SequentialChain**: Orchestrates multiple chains in sequence
 - **ConversationBufferMemory**: Maintains conversation context
+
+#### PDF Processing
+- **PdfReader**: PDF document text extraction
+- **CharacterTextSplitter**: Text segmentation for processing
+- **OpenAIEmbeddings**: Vector embeddings generation
+- **FAISS**: Vector similarity search and storage
 
 ### Model Configuration
 
@@ -128,11 +194,13 @@ first_input_prompt = PromptTemplate(
 
 ```
 LangChain/
-├── main.py              # Main application file
-├── constants.py         # API key configuration
-├── requirements.txt     # Python dependencies
-├── lcenv/              # Virtual environment (created after setup)
-└── README.md           # This file
+├── main.py                    # Celebrity search Streamlit application
+├── constants.py               # API key configuration
+├── requirements.txt           # Python dependencies
+├── PromptEngineering.ipynb    # Prompt engineering tutorial notebook
+├── QueryPDF.ipynb            # PDF query system tutorial notebook
+├── lcenv/                    # Virtual environment (created after setup)
+└── README.md                 # This file
 ```
 
 ## 🐛 Troubleshooting
@@ -162,13 +230,41 @@ LangChain/
 - **Environment Variables**: Consider using environment variables for production deployments
 - **Rate Limiting**: Be aware of OpenAI's rate limits and usage costs
 
+## 📚 Learning Resources
+
+### Jupyter Notebooks
+- **`PromptEngineering.ipynb`**: Learn the fundamentals of prompt engineering with LangChain
+- **`QueryPDF.ipynb`**: Master document processing and vector search techniques
+
+### Key Learning Outcomes
+- Understanding LangChain's core components
+- Building effective prompt templates
+- Implementing memory management in chains
+- Processing and querying PDF documents
+- Creating vector embeddings and similarity search
+- Building interactive web applications with Streamlit
+
 ## 🚀 Future Enhancements
 
+### Celebrity Search App
 - Add support for multiple celebrities comparison
 - Implement image search and display
 - Add more detailed historical context
 - Include social media presence analysis
 - Add export functionality for results
+
+### PDF Query System
+- Support for multiple document formats (DOCX, TXT)
+- Advanced text preprocessing and cleaning
+- Document summarization capabilities
+- Multi-language document support
+- Interactive query interface
+
+### General Improvements
+- Add comprehensive error handling
+- Implement logging and monitoring
+- Create Docker containerization
+- Add unit tests and CI/CD pipeline
 
 ## 📄 License
 
